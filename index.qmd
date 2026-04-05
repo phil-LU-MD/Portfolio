@@ -1,0 +1,214 @@
+---
+title: "Philippe Decker - photographer"
+format:
+  html:
+    toc: false
+    page-layout: custom
+---
+
+```{=html}
+<div class="slideshow-container">
+  <div class="slide fade"><img src="images/_DSF4196.jpeg" alt="alma_trenza"></div>
+  <div class="slide fade"><img src="images/_DSF6104.jpeg" alt="tennis_court"></div>
+  <div class="slide fade"><img src="images/_DSF6742.jpeg" alt="gaby_alma"></div>
+  <div class="slide fade"><img src="images/_DSF6044.jpeg" alt="violin"></div>
+  <div class="slide fade"><img src="images/_DSF5461.jpeg" alt="auto"></div>
+  <div class="slide fade"><img src="images/_DSF5577.jpeg" alt="snow"></div>
+  <div class="slide fade"><img src="images/_DSF5780.jpeg" alt="bed"></div>
+  <div class="slide fade"><img src="images/_DSF5882.jpeg" alt="garage"></div>
+  <div class="slide fade"><img src="images/_DSF6740.jpeg" alt="marcos_gaby_alma"></div>
+  <div class="slide fade"><img src="images/_DSF6829.jpeg" alt="landscape"></div>
+
+  <div class="name-overlay">
+    <span class="name-title">Philippe Decker</span>
+    <span class="name-subtitle">Photography</span>
+  </div>
+
+</div>
+
+<a href="mailto:decker.philippe@pm.me" class="contact-link">contact</a>
+
+<a href="https://www.instagram.com/ph_decker/" target="_blank" class="instagram-link">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.92 4.92 0 0 1 1.772 1.153 4.92 4.92 0 0 1 1.153 1.772c.163.46.35 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.92 4.92 0 0 1-1.153 1.772 4.92 4.92 0 0 1-1.772 1.153c-.46.163-1.26.35-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.92 4.92 0 0 1-1.772-1.153 4.92 4.92 0 0 1-1.153-1.772c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.92 4.92 0 0 1 1.153-1.772 4.92 4.92 0 0 1 1.772-1.153c.46-.163 1.26-.35 2.43-.403C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.775.13 4.902.333 4.14.63a7.07 7.07 0 0 0-2.56 1.667A7.07 7.07 0 0 0 .63 4.857C.333 5.619.13 6.492.072 7.769.014 9.049 0 9.458 0 12c0 2.542.014 2.951.072 4.231.058 1.277.261 2.15.558 2.912a7.07 7.07 0 0 0 1.667 2.56 7.07 7.07 0 0 0 2.56 1.667c.762.297 1.635.5 2.912.558C9.049 23.986 9.458 24 12 24s2.951-.014 4.231-.072c1.277-.058 2.15-.261 2.912-.558a7.07 7.07 0 0 0 2.56-1.667 7.07 7.07 0 0 0 1.667-2.56c.297-.762.5-1.635.558-2.912C23.986 14.951 24 14.542 24 12s-.014-2.951-.072-4.231c-.058-1.277-.261-2.15-.558-2.912a7.07 7.07 0 0 0-1.667-2.56A7.07 7.07 0 0 0 19.143.63C18.381.333 17.508.13 16.231.072 14.951.014 14.542 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+  </svg>
+</a>
+
+<div class="controls-row">
+  <button class="arrow arrow-left" onclick="goTo(current - 1)">&larr;</button>
+  <div class="slide-dots" id="slide-dots"></div>
+  <button class="arrow arrow-right" onclick="goTo(current + 1)">&rarr;</button>
+</div>
+
+<style>
+  body { margin: 0; background: #000; overflow: hidden; }
+  .quarto-title, header, footer, .navbar { display: none !important; }
+
+  .slideshow-container {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    margin-top: 5vh;
+    margin-bottom: 0;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Name overlay — top left */
+  .name-overlay {
+    position: absolute;
+    top: 32px;
+    left: 40px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .name-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+  }
+
+  .name-subtitle {
+    font-family: 'Georgia', serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+
+  /* Contact link */
+  .contact-link {
+    position: fixed;
+    bottom: 27px;
+    right: 58px;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Georgia', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    z-index: 20;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover {
+    color: #fff;
+  }
+
+  /* Instagram link */
+  .instagram-link {
+    position: fixed;
+    bottom: 24px;
+    right: 28px;
+    color: rgba(255,255,255,0.6);
+    z-index: 20;
+    transition: color 0.2s;
+  }
+
+  .instagram-link:hover {
+    color: #fff;
+  }
+
+  /* Controls row: arrow — dots — arrow */
+  .controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px 0;
+  }
+
+  .arrow {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-family: monospace;
+  }
+
+  .arrow:hover {
+    color: #fff;
+  }
+
+  /* Navigation dots */
+  .slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .dot.active {
+    background: rgba(255,255,255,0.95);
+  }
+</style>
+
+<script>
+  const slides = document.querySelectorAll(".slide");
+  const dotsContainer = document.getElementById("slide-dots");
+  let current = 0;
+  let timer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.className = "dot" + (i === 0 ? " active" : "");
+    dot.addEventListener("click", () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    slides[current].classList.remove("active");
+    dotsContainer.children[current].classList.remove("active");
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add("active");
+    dotsContainer.children[current].classList.add("active");
+    resetTimer();
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  slides[0].classList.add("active");
+  resetTimer();
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft")  goTo(current - 1);
+    if (e.key === "ArrowRight") goTo(current + 1);
+  });
+</script>
+```
